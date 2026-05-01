@@ -1,0 +1,647 @@
+import React, { useState, useEffect } from 'react';
+import { 
+  Terminal, 
+  BookOpen, 
+  Coffee, 
+  Mail, 
+  Code, 
+  Play, 
+  Pause, 
+  RotateCcw,
+  Plus,
+  Trash2,
+  CheckCircle,
+  Circle,
+  ExternalLink,
+  ChevronRight,
+  ArrowLeft,
+  Cpu,
+  Landmark
+} from 'lucide-react';
+
+// --- COMPONENTES DE SECCIÓN ---
+
+const Inicio = ({ setSeccionActiva }) => (
+  <div className="flex flex-col items-center justify-center min-h-[70vh] text-center px-4 animate-fade-in">
+    <div className="mb-6 relative">
+      <div className="absolute inset-0 bg-blue-500 rounded-full blur-xl opacity-20 animate-pulse"></div>
+      <div className="w-32 h-32 bg-gray-800 rounded-full border-4 border-blue-500 flex items-center justify-center relative z-10">
+        <Terminal size={48} className="text-blue-400" />
+      </div>
+    </div>
+    <h1 className="text-4xl md:text-6xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-emerald-400">
+      ¡Hola, Mundo! Soy Alan Eduardo
+    </h1>
+    <p className="text-xl text-gray-400 mb-8 max-w-2xl">
+      Estudiante de Ciencias de la Informática. Apasionado por el código, los algoritmos y por compartir conocimiento con la comunidad estudiantil.
+    </p>
+    <div className="flex flex-wrap justify-center gap-4">
+      <button 
+        onClick={() => setSeccionActiva('estudia')}
+        className="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-medium transition flex items-center gap-2 shadow-lg shadow-blue-500/30"
+      >
+        <Coffee size={20} />
+        Estudia Conmigo
+      </button>
+      <button 
+        onClick={() => setSeccionActiva('blog')}
+        className="px-6 py-3 bg-gray-800 hover:bg-gray-700 text-white border border-gray-700 rounded-lg font-medium transition flex items-center gap-2"
+      >
+        <BookOpen size={20} />
+        Leer mi Blog
+      </button>
+    </div>
+  </div>
+);
+
+const Blog = () => {
+  // Estado para saber qué post está abierto (null significa que estamos viendo la lista)
+  const [postActivo, setPostActivo] = useState(null);
+  // Estado para saber qué categoría de blog estamos viendo
+  const [categoriaActiva, setCategoriaActiva] = useState('tech'); // 'tech' o 'politica'
+
+  // 👇 POSTS DE TECNOLOGÍA (El blog original)
+  const postsTech = [ 
+    {
+      id: 1,
+      titulo: "Entendiendo Estructuras de Datos: Árboles vs Grafos",
+      fecha: "24 Oct, 2023",
+      resumen: "Una guía visual para entender cuándo usar un árbol binario y cuándo necesitas un grafo completo en tus proyectos de la universidad.",
+      contenido: "Aquí va todo el contenido largo de tu artículo. Puedes escribir párrafos enteros sobre cómo los árboles binarios son geniales para búsquedas rápidas (O(log n)), mientras que los grafos son perfectos para mapear rutas, como en Google Maps o en redes sociales. ¡Incluso puedes agregar etiquetas HTML si en el futuro decides renderizar código aquí!",
+      tags: ["Algoritmos", "Estructuras"],
+      readTime: "5 min lectura"
+    },
+    {
+      id: 2, 
+      titulo: "Que es la recursividad",
+      fecha: "01 May, 2026",
+      resumen: "Esto siempre sera basico en programacion, siempre te salvara la vida", 
+      contenido: "la recursividad es una tecnica de programacion en donde una funcion se llama a si misma para resolver un problema", 
+      tags: ["Recursividad", "Programacion"],
+      readTime: "10 min de lectura"
+    },
+    {
+      id: 3,
+      titulo: "Mi experiencia en el primer Hackathon",
+      fecha: "15 Sep, 2023",
+      resumen: "Te cuento cómo sobrevivimos 48 horas programando sin parar, qué tecnologías usamos y qué aprendí de los errores que cometimos.",
+      contenido: "Llegamos el viernes a las 6 PM sin saber a lo que nos enfrentábamos. Nuestro equipo decidió usar React y Firebase para crear una app de impacto social. Fueron 48 horas intensas llenas de café, bugs a las 3 AM y mucha piza. El mayor aprendizaje: planifica la arquitectura antes de escribir la primera línea de código.",
+      tags: ["Experiencia", "Hackathon"],
+      readTime: "8 min lectura"
+    },
+    {
+      id: 4,
+      titulo: "Configurando el entorno de desarrollo perfecto",
+      fecha: "02 Ago, 2023",
+      resumen: "Extensiones de VS Code, configuraciones de terminal y atajos de teclado que me ahorran horas de trabajo a la semana.",
+      contenido: "Mi stack actual de VS Code incluye: Prettier, ESLint, GitLens y el tema 'Dracula'. Además, cambié mi terminal por defecto a ZSH con Oh-My-Zsh y el tema 'Agnoster'. Esto no solo hace que mi pantalla se vea genial (como de hacker), sino que los autocompletados me ahorran muchísimo tiempo a la hora de navegar entre carpetas.",
+      tags: ["Productividad", "Herramientas"],
+      readTime: "4 min lectura"
+    },
+    {
+      id: 5,
+      titulo: "Mi primer proyecto en React",
+      fecha: "01 May, 2026",
+      resumen: "Aquí puedes escribir el resumen de tu nuevo artículo. Modifica este texto como quieras para contar tu experiencia.",
+      contenido: "Para mi portafolio decidí usar React con TailwindCSS. Al principio entender el estado (useState) y los efectos (useEffect) fue un reto, pero una vez que haces clic, todo tiene sentido. Construir interfaces basadas en componentes hace que el código sea súper reutilizable.",
+      tags: ["React", "Frontend", "Aprendizaje"],
+      readTime: "6 min lectura"
+    }
+  ];
+
+  // 👇 POSTS DE POLÍTICA (La nueva sección)
+  const postsPolitica = [
+    {
+      id: 101, // Usamos IDs diferentes para no confundirlos con los de Tech
+      titulo: "El impacto de la Inteligencia Artificial en las elecciones",
+      fecha: "20 Abr, 2026",
+      resumen: "Cómo los algoritmos y las redes sociales están moldeando la opinión pública y los retos regulatorios que enfrentamos.",
+      contenido: "La tecnología siempre ha influido en la política, pero la IA generativa y los algoritmos de recomendación han acelerado este proceso. En este artículo analizo cómo se pueden crear marcos regulatorios que protejan la democracia sin frenar la innovación tecnológica...",
+      tags: ["Política", "IA", "Sociedad"],
+      readTime: "7 min lectura"
+    },
+    {
+      id: 102,
+      titulo: "Privacidad de datos: Un derecho humano en la era digital",
+      fecha: "05 Mar, 2026",
+      resumen: "Una reflexión sobre las leyes de protección de datos y por qué los ciudadanos deben exigir mayor transparencia a las grandes tecnológicas.",
+      contenido: "Los datos son el nuevo petróleo, pero ¿quién es el dueño real de tu información? Exploraremos las diferencias entre el RGPD en Europa y las legislaciones locales, y cómo la política pública debe adaptarse a la velocidad del internet...",
+      tags: ["Privacidad", "Derechos", "Leyes"],
+      readTime: "6 min lectura"
+    }
+  ];
+
+  // Combinamos ambos para poder buscar el post activo, sin importar de qué categoría sea
+  const todosLosPosts = [...postsTech, ...postsPolitica];
+  
+  // Decidimos qué lista renderizar dependiendo de la pestaña seleccionada
+  const postsAMostrar = categoriaActiva === 'tech' ? postsTech : postsPolitica;
+
+  // Si hay un post activo, mostramos su contenido completo
+  if (postActivo) {
+    const post = todosLosPosts.find(p => p.id === postActivo);
+    return (
+      <div className="max-w-3xl mx-auto animate-fade-in">
+        <button 
+          onClick={() => setPostActivo(null)}
+          className="mb-6 flex items-center gap-2 text-gray-400 hover:text-blue-400 transition"
+        >
+          <ArrowLeft size={20} /> Volver a los artículos
+        </button>
+        
+        <article className="bg-gray-800/30 p-8 rounded-2xl border border-gray-700/50">
+          <h1 className="text-3xl md:text-4xl font-bold mb-4 text-blue-400">{post.titulo}</h1>
+          
+          <div className="flex items-center gap-4 mb-8 text-sm text-gray-500 border-b border-gray-700 pb-6">
+            <span>{post.fecha}</span>
+            <span>•</span>
+            <span>{post.readTime}</span>
+            <div className="flex gap-2 ml-auto">
+              {post.tags.map(tag => (
+                <span key={tag} className="px-2 py-1 bg-gray-900 rounded-md text-emerald-400 border border-emerald-900/50">
+                  #{tag}
+                </span>
+              ))}
+            </div>
+          </div>
+
+          <div className="prose prose-invert max-w-none text-gray-300 leading-relaxed text-lg">
+            <p>{post.contenido}</p>
+          </div>
+        </article>
+      </div>
+    );
+  }
+
+  // Si no hay post activo, mostramos la lista con las pestañas
+  return (
+    <div className="max-w-4xl mx-auto animate-fade-in">
+      <div className="flex items-center gap-3 mb-6 border-b border-gray-800 pb-4">
+        <Terminal className="text-emerald-400" size={32} />
+        <h2 className="text-3xl font-bold">Terminal Blog_</h2>
+      </div>
+
+      {/* 👇 Pestañas para cambiar entre Tech y Política */}
+      <div className="flex gap-4 mb-8">
+        <button
+          onClick={() => setCategoriaActiva('tech')}
+          className={`flex items-center gap-2 px-5 py-2.5 rounded-lg font-medium transition ${
+            categoriaActiva === 'tech'
+              ? 'bg-blue-600/20 text-blue-400 border border-blue-500/50'
+              : 'bg-gray-800 text-gray-400 border border-transparent hover:bg-gray-700 hover:text-gray-200'
+          }`}
+        >
+          <Cpu size={18} />
+          Blog Tech
+        </button>
+        <button
+          onClick={() => setCategoriaActiva('politica')}
+          className={`flex items-center gap-2 px-5 py-2.5 rounded-lg font-medium transition ${
+            categoriaActiva === 'politica'
+              ? 'bg-purple-600/20 text-purple-400 border border-purple-500/50'
+              : 'bg-gray-800 text-gray-400 border border-transparent hover:bg-gray-700 hover:text-gray-200'
+          }`}
+        >
+          <Landmark size={18} />
+          Blog Política
+        </button>
+      </div>
+      
+      {/* Lista de artículos dinámica */}
+      <div className="grid gap-6">
+        {postsAMostrar.length === 0 ? (
+          <p className="text-gray-500 text-center py-8">Aún no hay artículos en esta categoría.</p>
+        ) : (
+          postsAMostrar.map(post => (
+            <article 
+              key={post.id} 
+              onClick={() => setPostActivo(post.id)}
+              className="bg-gray-800/50 border border-gray-700 p-6 rounded-xl hover:border-blue-500/50 hover:bg-gray-800 transition group cursor-pointer"
+            >
+              <div className="flex justify-between items-start mb-2">
+                <h3 className="text-xl font-semibold group-hover:text-blue-400 transition">{post.titulo}</h3>
+                <span className="text-sm text-gray-500 whitespace-nowrap ml-4">{post.fecha}</span>
+              </div>
+              <p className="text-gray-400 mb-4">{post.resumen}</p>
+              <div className="flex justify-between items-center">
+                <div className="flex gap-2">
+                  {post.tags.map(tag => (
+                    <span key={tag} className="text-xs px-2 py-1 bg-gray-900 rounded-md text-emerald-400 border border-emerald-900/50">
+                      #{tag}
+                    </span>
+                  ))}
+                </div>
+                <span className="text-sm text-blue-500 flex items-center gap-1 opacity-0 group-hover:opacity-100 transition">
+                  Leer artículo <ChevronRight size={16} />
+                </span>
+              </div>
+            </article>
+          ))
+        )}
+      </div>
+    </div>
+  );
+};
+
+const EstudiaConmigo = () => {
+  // Estado para el Pomodoro
+  const [tiempo, setTiempo] = useState(25 * 60); // 25 minutos
+  const [activo, setActivo] = useState(false);
+  const [modo, setModo] = useState('pomodoro'); // pomodoro, descansoCorto
+  
+  // Estado para To-Do
+  const [tareas, setTareas] = useState([
+    { id: 1, texto: "Estudiar POO en Java", completada: false },
+    { id: 2, texto: "Terminar práctica de Base de Datos", completada: true }
+  ]);
+  const [nuevaTarea, setNuevaTarea] = useState('');
+
+  // Lógica del Temporizador
+  useEffect(() => {
+    let intervalo = null;
+    if (activo && tiempo > 0) {
+      intervalo = setInterval(() => {
+        setTiempo((t) => t - 1);
+      }, 1000);
+    } else if (tiempo === 0) {
+      setActivo(false);
+      // Aquí se podría reproducir un sonido
+      alert(modo === 'pomodoro' ? '¡Tiempo de un descanso!' : '¡A estudiar de nuevo!');
+    }
+    return () => clearInterval(intervalo);
+  }, [activo, tiempo, modo]);
+
+  const formatoTiempo = (segundos) => {
+    const m = Math.floor(segundos / 60);
+    const s = segundos % 60;
+    return `${m.toString().padStart(2, '0')}:${s.toString().padStart(2, '0')}`;
+  };
+
+  const cambiarModo = (nuevoModo) => {
+    setModo(nuevoModo);
+    setActivo(false);
+    if (nuevoModo === 'pomodoro') setTiempo(25 * 60);
+    else if (nuevoModo === 'descansoCorto') setTiempo(5 * 60);
+  };
+
+  // Lógica de To-Do
+  const agregarTarea = (e) => {
+    e.preventDefault();
+    if (!nuevaTarea.trim()) return;
+    setTareas([...tareas, { id: Date.now(), texto: nuevaTarea, completada: false }]);
+    setNuevaTarea('');
+  };
+
+  const toggleTarea = (id) => {
+    setTareas(tareas.map(t => t.id === id ? { ...t, completada: !t.completada } : t));
+  };
+
+  const eliminarTarea = (id) => {
+    setTareas(tareas.filter(t => t.id !== id));
+  };
+
+  return (
+    <div className="max-w-5xl mx-auto animate-fade-in grid md:grid-cols-2 gap-8">
+      {/* Columna Izquierda: Pomodoro & Info */}
+      <div>
+        <div className="flex items-center gap-3 mb-6">
+          <Coffee className="text-orange-400" size={32} />
+          <h2 className="text-3xl font-bold">Focus Room</h2>
+        </div>
+        <p className="text-gray-400 mb-8">Únete a mi sesión de estudio. Usa el temporizador Pomodoro para mantener la concentración y anota tus tareas aquí abajo.</p>
+
+        {/* Pomodoro Timer */}
+        <div className="bg-gray-800 rounded-2xl p-8 flex flex-col items-center justify-center shadow-xl border border-gray-700">
+          <div className="flex gap-4 mb-8">
+            <button 
+              onClick={() => cambiarModo('pomodoro')}
+              className={`px-4 py-1 rounded-full text-sm font-medium transition ${modo === 'pomodoro' ? 'bg-blue-600 text-white' : 'bg-gray-700 text-gray-300 hover:bg-gray-600'}`}
+            >
+              Pomodoro (25m)
+            </button>
+            <button 
+              onClick={() => cambiarModo('descansoCorto')}
+              className={`px-4 py-1 rounded-full text-sm font-medium transition ${modo === 'descansoCorto' ? 'bg-emerald-600 text-white' : 'bg-gray-700 text-gray-300 hover:bg-gray-600'}`}
+            >
+              Descanso (5m)
+            </button>
+          </div>
+
+          <div className="text-7xl font-mono font-bold mb-8 text-white tracking-wider">
+            {formatoTiempo(tiempo)}
+          </div>
+
+          <div className="flex gap-4">
+            <button 
+              onClick={() => setActivo(!activo)}
+              className="w-16 h-16 rounded-full bg-blue-500 hover:bg-blue-600 flex items-center justify-center text-white transition shadow-lg shadow-blue-500/20"
+            >
+              {activo ? <Pause size={28} /> : <Play size={28} className="ml-1" />}
+            </button>
+            <button 
+              onClick={() => cambiarModo(modo)} // Reinicia el tiempo del modo actual
+              className="w-16 h-16 rounded-full bg-gray-700 hover:bg-gray-600 flex items-center justify-center text-white transition"
+            >
+              <RotateCcw size={24} />
+            </button>
+          </div>
+        </div>
+      </div>
+
+      {/* Columna Derecha: To-Do y Música */}
+      <div className="flex flex-col gap-6">
+        
+        {/* 👇 REPRODUCTOR DE MÚSICA (Spotify Iframe) 👇 */}
+        <div className="bg-gray-800 rounded-2xl border border-gray-700 overflow-hidden h-[152px]">
+          <iframe 
+            style={{ borderRadius: '12px' }} 
+            src="https://open.spotify.com/embed/track/5TbzAWWc5eJaANpA9kfGCd?utm_source=generator"
+            width="100%" 
+            height="152" 
+            frameBorder="0" 
+            allowFullScreen="" 
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+            loading="lazy"
+          ></iframe>
+        </div>
+
+        {/* To-Do List */}
+        <div className="bg-gray-800 rounded-2xl p-6 border border-gray-700 flex-1 flex flex-col">
+          <h3 className="text-xl font-bold mb-4 flex items-center gap-2">
+            <CheckCircle className="text-blue-400" size={20}/> Tareas de la Sesión
+          </h3>
+          
+          <form onSubmit={agregarTarea} className="flex gap-2 mb-4">
+            <input 
+              type="text" 
+              value={nuevaTarea}
+              onChange={(e) => setNuevaTarea(e.target.value)}
+              placeholder="¿Qué vas a estudiar hoy?" 
+              className="flex-1 bg-gray-900 border border-gray-700 rounded-lg px-4 py-2 text-sm focus:outline-none focus:border-blue-500 transition"
+            />
+            <button type="submit" className="bg-gray-700 hover:bg-gray-600 text-white p-2 rounded-lg transition">
+              <Plus size={20} />
+            </button>
+          </form>
+
+          <div className="flex-1 overflow-y-auto pr-2 space-y-2">
+            {tareas.length === 0 ? (
+              <p className="text-gray-500 text-sm text-center mt-4">No hay tareas pendientes. ¡Agrega una!</p>
+            ) : (
+              tareas.map(tarea => (
+                <div key={tarea.id} className="flex items-center justify-between group p-2 hover:bg-gray-750 rounded-lg transition bg-gray-900/50">
+                  <div 
+                    className="flex items-center gap-3 cursor-pointer flex-1"
+                    onClick={() => toggleTarea(tarea.id)}
+                  >
+                    {tarea.completada ? (
+                      <CheckCircle size={18} className="text-emerald-400 flex-shrink-0" />
+                    ) : (
+                      <Circle size={18} className="text-gray-500 flex-shrink-0" />
+                    )}
+                    <span className={`text-sm ${tarea.completada ? 'line-through text-gray-500' : 'text-gray-300'}`}>
+                      {tarea.texto}
+                    </span>
+                  </div>
+                  <button 
+                    onClick={() => eliminarTarea(tarea.id)}
+                    className="text-gray-600 hover:text-red-400 opacity-0 group-hover:opacity-100 transition p-1"
+                  >
+                    <Trash2 size={16} />
+                  </button>
+                </div>
+              ))
+            )}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+const Recursos = () => {
+  // 👇 AQUÍ PUEDES EDITAR LOS RECURSOS
+  // Agregué una categoría nueva para Documentos/Apuntes.
+  // En "url" puedes poner enlaces a Google Drive, Dropbox, o rutas de PDFs alojados en tu sitio.
+  const categorias = [
+    {
+      titulo: "Mis Apuntes y Documentos",
+      links: [
+        { nombre: "Resumen POO (PDF)", url: "https://ejemplo.com/tu-pdf-de-poo.pdf", desc: "Mis apuntes para pasar Programación Orientada a Objetos." },
+        { nombre: "Carpeta Drive - Álgebra Lineal", url: "https://drive.google.com/...", desc: "Ejercicios resueltos y guías de estudio." },
+        { nombre: "Plantilla para Reportes (Word)", url: "#", desc: "Formato APA que siempre uso para entregas." }
+      ]
+    },
+    {
+      titulo: "Documentación Fundamental",
+      links: [
+        { nombre: "MDN Web Docs", url: "#", desc: "La biblia del desarrollo web." },
+        { nombre: "React.dev", url: "#", desc: "Documentación oficial de React." },
+        { nombre: "W3Schools", url: "#", desc: "Tutoriales rápidos y directos." }
+      ]
+    },
+    {
+      titulo: "Herramientas Útiles",
+      links: [
+        { nombre: "GitHub Student Developer Pack", url: "#", desc: "Herramientas gratuitas para estudiantes." },
+        { nombre: "Vercel", url: "#", desc: "Para alojar tus proyectos gratis." },
+        { nombre: "Figma", url: "#", desc: "Diseño de interfaces." }
+      ]
+    }
+  ];
+
+  return (
+    <div className="max-w-4xl mx-auto animate-fade-in">
+      <div className="flex items-center gap-3 mb-8 border-b border-gray-800 pb-4">
+        <Code className="text-purple-400" size={32} />
+        <h2 className="text-3xl font-bold">Recursos & Enlaces</h2>
+      </div>
+      <p className="text-gray-400 mb-8">Una colección curada de las herramientas y documentaciones que más utilizo en mi día a día como estudiante.</p>
+
+      <div className="grid md:grid-cols-2 gap-8">
+        {categorias.map(cat => (
+          <div key={cat.titulo} className="bg-gray-800/30 p-6 rounded-2xl border border-gray-700/50">
+            <h3 className="text-xl font-bold mb-4 text-gray-200">{cat.titulo}</h3>
+            <div className="space-y-4">
+              {cat.links.map(link => (
+                <a key={link.nombre} href={link.url} className="block group bg-gray-900/50 p-4 rounded-xl border border-gray-800 hover:border-purple-500/50 transition">
+                  <div className="flex justify-between items-center mb-1">
+                    <span className="font-medium text-blue-400 group-hover:text-blue-300">{link.nombre}</span>
+                    <ExternalLink size={14} className="text-gray-500 group-hover:text-blue-400" />
+                  </div>
+                  <p className="text-sm text-gray-400">{link.desc}</p>
+                </a>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+const Contacto = () => {
+  return (
+    <div className="max-w-2xl mx-auto animate-fade-in">
+      <div className="flex items-center gap-3 mb-8 border-b border-gray-800 pb-4">
+        <Mail className="text-blue-400" size={32} />
+        <h2 className="text-3xl font-bold">PingMe_</h2>
+      </div>
+      
+      <div className="bg-gray-800 p-8 rounded-2xl border border-gray-700 shadow-xl">
+        <p className="text-gray-400 mb-6">¿Quieres colaborar en un proyecto, tienes dudas sobre la carrera o simplemente quieres saludar? ¡Escríbeme!</p>
+        
+        {/* 👇 Formulario actualizado para usar FORMSPREE */}
+        <form 
+          action="https://formspree.io/f/AQUI_TU_ID_DE_FORMSPREE" 
+          method="POST" 
+          className="space-y-4"
+        >
+          <div className="grid grid-cols-2 gap-4">
+            <div>
+              <label className="block text-sm font-medium text-gray-400 mb-1">Tu Nombre</label>
+              <input type="text" name="nombre" required className="w-full bg-gray-900 border border-gray-700 rounded-lg px-4 py-2 text-gray-200 focus:outline-none focus:border-blue-500 transition" placeholder="Ej. Ada Lovelace" />
+            </div>
+            <div>
+              <label className="block text-sm font-medium text-gray-400 mb-1">Tu Email</label>
+              <input type="email" name="email" required className="w-full bg-gray-900 border border-gray-700 rounded-lg px-4 py-2 text-gray-200 focus:outline-none focus:border-blue-500 transition" placeholder="ada@ejemplo.com" />
+            </div>
+          </div>
+          <div>
+            <label className="block text-sm font-medium text-gray-400 mb-1">Mensaje</label>
+            <textarea name="mensaje" required rows="4" className="w-full bg-gray-900 border border-gray-700 rounded-lg px-4 py-2 text-gray-200 focus:outline-none focus:border-blue-500 transition resize-none" placeholder="Escribe tu mensaje aquí..."></textarea>
+          </div>
+          <button type="submit" className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 rounded-lg transition flex justify-center items-center gap-2">
+            <Mail size={18} />
+            Enviar Mensaje
+          </button>
+        </form>
+
+        <div className="mt-8 pt-6 border-t border-gray-700 flex justify-center gap-6">
+          <a href="#" className="text-gray-400 hover:text-white transition">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.02c3.14-.35 6.5-1.4 6.5-7a4.6 4.6 0 0 0-1.39-3.23 4.2 4.2 0 0 0-.1-3.2s-1.1-.35-3.5 1.25a11.39 11.39 0 0 0-6 0c-2.4-1.6-3.5-1.25-3.5-1.25a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 2 8.98c0 5.6 3.36 6.65 6.5 7a4.8 4.8 0 0 0-1 3.02v4"></path></svg>
+          </a>
+          <a href="#" className="text-gray-400 hover:text-blue-500 transition">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+// --- APLICACIÓN PRINCIPAL ---
+
+export default function App() {
+  const [seccionActiva, setSeccionActiva] = useState('inicio');
+
+  const navItems = [
+    { id: 'inicio', nombre: 'Inicio', icono: Terminal },
+    { id: 'blog', nombre: 'Blog', icono: BookOpen },
+    { id: 'estudia', nombre: 'Estudia Conmigo', icono: Coffee },
+    { id: 'recursos', nombre: 'Recursos', icono: Code },
+    { id: 'contacto', nombre: 'Contacto', icono: Mail },
+  ];
+
+  return (
+    <div className="min-h-screen bg-gray-950 text-gray-100 font-sans selection:bg-blue-500/30">
+      
+      {/* Navegación Superior */}
+      <nav className="sticky top-0 z-50 bg-gray-950/80 backdrop-blur-md border-b border-gray-800">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between h-16">
+            {/* Logo */}
+            <div className="flex-shrink-0 flex items-center cursor-pointer" onClick={() => setSeccionActiva('inicio')}>
+              <span className="text-blue-500 font-mono font-bold text-xl mr-1">{`<`}</span>
+              <span className="font-bold text-xl tracking-tight">EstudianteCS</span>
+              <span className="text-blue-500 font-mono font-bold text-xl ml-1">{`/>`}</span>
+            </div>
+            
+            {/* Desktop Menu */}
+            <div className="hidden md:block">
+              <div className="ml-10 flex items-baseline space-x-1">
+                {navItems.map((item) => {
+                  const Icono = item.icono;
+                  return (
+                    <button
+                      key={item.id}
+                      onClick={() => setSeccionActiva(item.id)}
+                      className={`px-3 py-2 rounded-md text-sm font-medium transition flex items-center gap-2 ${
+                        seccionActiva === item.id 
+                          ? 'bg-gray-800 text-blue-400' 
+                          : 'text-gray-300 hover:bg-gray-800/50 hover:text-white'
+                      }`}
+                    >
+                      <Icono size={16} />
+                      {item.nombre}
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+
+            {/* Mobile Menu Button (Simplificado) */}
+            <div className="md:hidden flex overflow-x-auto pb-2 -mb-2 no-scrollbar">
+               <div className="flex space-x-2 mt-2">
+                {navItems.map((item) => (
+                  <button
+                    key={item.id}
+                    onClick={() => setSeccionActiva(item.id)}
+                    className={`px-3 py-2 rounded-md text-xs font-medium whitespace-nowrap transition flex items-center gap-1 ${
+                      seccionActiva === item.id 
+                        ? 'bg-gray-800 text-blue-400' 
+                        : 'text-gray-300'
+                    }`}
+                  >
+                    {item.nombre}
+                  </button>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      {/* Contenedor Principal Dinámico */}
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        {seccionActiva === 'inicio' && <Inicio setSeccionActiva={setSeccionActiva} />}
+        {seccionActiva === 'blog' && <Blog />}
+        {seccionActiva === 'estudia' && <EstudiaConmigo />}
+        {seccionActiva === 'recursos' && <Recursos />}
+        {seccionActiva === 'contacto' && <Contacto />}
+      </main>
+
+      {/* Footer */}
+      <footer className="border-t border-gray-900 bg-gray-950 mt-auto">
+        <div className="max-w-7xl mx-auto py-6 px-4 flex flex-col md:flex-row justify-between items-center">
+          <p className="text-gray-500 text-sm mb-4 md:mb-0">
+            © {new Date().getFullYear()} Creado con React y Tailwind.
+          </p>
+          <div className="flex space-x-6">
+            <span className="text-gray-500 text-sm flex items-center gap-1">
+              <Terminal size={14}/> compila sin errores
+            </span>
+          </div>
+        </div>
+      </footer>
+
+      {/* Estilos globales añadidos directamente (animaciones personalizadas de Tailwind) */}
+      <style dangerouslySetInnerHTML={{__html: `
+        @keyframes fadeIn {
+          from { opacity: 0; transform: translateY(10px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in {
+          animation: fadeIn 0.4s ease-out forwards;
+        }
+        .no-scrollbar::-webkit-scrollbar {
+          display: none;
+        }
+        .no-scrollbar {
+          -ms-overflow-style: none;
+          scrollbar-width: none;
+        }
+      `}} />
+    </div>
+  );
+}
