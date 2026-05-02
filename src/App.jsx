@@ -128,7 +128,16 @@ const Blog = () => {
       contenido: "Los datos son el nuevo petróleo, pero ¿quién es el dueño real de tu información? Exploraremos las diferencias entre el RGPD en Europa y las legislaciones locales, y cómo la política pública debe adaptarse a la velocidad del internet...",
       tags: ["Privacidad", "Derechos", "Leyes"],
       readTime: "6 min lectura"
-    }
+    },
+    {
+      id: 103,
+      titulo: "El entorno digital en Mexico",
+      fecha: "01 de Mayo, 2026",
+      resumen: "Una mirada a cómo México está adoptando la tecnología y los desafíos que enfrenta en términos de infraestructura y educación digital.",
+      contenido: "México ha dado pasos importantes en la digitalización, pero aún enfrenta retos significativos en términos de acceso a internet y educación tecnológica. En este artículo analizo las políticas públicas implementadas y propongo soluciones para cerrar la brecha digital...",
+      tags: ["México", "Tecnología", "Desarrollo"],
+      readTime: "5 min lectura"
+    },
   ];
 
   // Combinamos ambos para poder buscar el post activo, sin importar de qué categoría sea
@@ -355,6 +364,7 @@ const EstudiaConmigo = () => {
         <div className="bg-gray-800 rounded-2xl border border-gray-700 overflow-hidden h-[152px]">
           <iframe 
             style={{ borderRadius: '12px' }} 
+
             src="https://open.spotify.com/embed/track/5TbzAWWc5eJaANpA9kfGCd?utm_source=generator"
             width="100%" 
             height="152" 
