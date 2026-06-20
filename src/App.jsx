@@ -453,12 +453,12 @@ const Recursos = () => {
     {
       titulo: "Herramientas Útiles",
       links: [
-        { nombre: "GitHub Student Developer Pack", url: "#", desc: "Herramientas gratuitas para estudiantes." },
-        { nombre: "Vercel", url: "#", desc: "Para alojar tus proyectos gratis." },
-        { nombre: "Figma", url: "#", desc: "Diseño de interfaces." }
+        { nombre: "GitHub Student Developer Pack", url: "https://education.github.com/pack", desc: "Herramientas gratuitas para estudiantes." },
+        { nombre: "Vercel", url: "https://vercel.com/", desc: "Para alojar tus proyectos gratis." },
+        { nombre: "Figma", url: "https://figma.com/", desc: "Diseño de interfaces." }
       ]
     }
-  ];
+  ];   
 
   return (
     <div className="max-w-4xl mx-auto animate-fade-in">
