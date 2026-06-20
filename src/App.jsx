@@ -445,9 +445,9 @@ const Recursos = () => {
     {
       titulo: "Documentación Fundamental",
       links: [
-        { nombre: "MDN Web Docs", url: "#", desc: "La biblia del desarrollo web." },
-        { nombre: "React.dev", url: "#", desc: "Documentación oficial de React." },
-        { nombre: "W3Schools", url: "#", desc: "Tutoriales rápidos y directos." }
+        { nombre: "Aprende React de forma profesional", url: "https://react.dev/", desc: "React te permite crear interfaces de usuario a partir de piezas individuales llamadas componentes. Crea tus propios componentes de React como , , y . Luego, combínalos para crear pantallas, páginas y aplicaciones completas" },
+        { nombre: "Cppreference", url: "https://cppreference.com/", desc: "Documentación oficial de C++." },
+        { nombre: "Documentación de Python", url: "https://docs.python.org/3/", desc: "La documentación oficial de Python." }
       ]
     },
     {
