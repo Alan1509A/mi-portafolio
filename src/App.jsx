@@ -65,18 +65,18 @@ const Blog = () => {
     {
       id: 1,
       titulo: "Entendiendo Estructuras de Datos: Árboles vs Grafos",
-      fecha: "24 Oct, 2023",
-      resumen: "Una guía visual para entender cuándo usar un árbol binario y cuándo necesitas un grafo completo en tus proyectos de la universidad.",
-      contenido: "Aquí va todo el contenido largo de tu artículo. Puedes escribir párrafos enteros sobre cómo los árboles binarios son geniales para búsquedas rápidas (O(log n)), mientras que los grafos son perfectos para mapear rutas, como en Google Maps o en redes sociales. ¡Incluso puedes agregar etiquetas HTML si en el futuro decides renderizar código aquí!",
-      tags: ["Algoritmos", "Estructuras"],
-      readTime: "5 min lectura"
+      fecha: "19 Jun, 2026",
+      resumen: "Una guía sobre que son los Grafos y los Arboles dentro de la Informatica",
+      contenido: "Dentro del mundo de la Informatica hay demasiados conceptos y metodos que seguir y sobre todo, entender, el dia de hoy hablaremos sobre grafos y arboles. En primer lugar tenemos a los grafos, que se definen como un conjunto de nodos (vertices) y conexiones (aristas), Dentro de estos tenemos tres tipos de grafos basicos: Grafo dirigido, grafo no dirigido y grafo ponderado. Por otro lado, tenemos a los arboles, que son un tipo especial de grafo que no tiene ciclos y tiene una estructura jerarquica, es decir, cada nodo tiene un unico padre excepto el nodo raiz que no tiene padre. Dentro de los arboles tenemos varios tipos, como el arbol binario, arbol AVL y arbol B. Ambos conceptos son fundamentales en la Informatica y se utilizan en una gran variedad de aplicaciones, desde bases de datos hasta inteligencia artificial.",
+      tags: ["Algoritmos", "Estructuras", "Ordenamientos"],
+      readTime: "10 min lectura"
     },
     {
       id: 2, 
       titulo: "Que es la recursividad",
-      fecha: "01 May, 2026",
+      fecha: "20 Jun, 2026",
       resumen: "Esto siempre sera basico en programacion, siempre te salvara la vida", 
-      contenido: "la recursividad es una tecnica de programacion en donde una funcion se llama a si misma para resolver un problema", 
+      contenido: "la recursividad es una tecnica de programacion en donde una funcion se llama a si misma para resolver un problema, es una forma elegante de resolver problemas que pueden ser divididos en subproblemas mas pequeños. Un ejemplo clasico de recursividad es el calculo del factorial de un numero, donde el factorial de n se define como n * factorial(n-1) con la condicion base de que factorial(0) es igual a 1. La recursividad puede ser muy poderosa, pero tambien puede llevar a problemas de rendimiento si no se maneja correctamente, como el desbordamiento de pila. Es importante siempre tener una condicion base clara y asegurarse de que cada llamada recursiva se acerque a esa condicion base para evitar ciclos infinitos.", 
       tags: ["Recursividad", "Programacion"],
       readTime: "10 min de lectura"
     },
@@ -92,7 +92,7 @@ const Blog = () => {
     {
       id: 4,
       titulo: "Configurando el entorno de desarrollo perfecto",
-      fecha: "02 Ago, 2023",
+      fecha: "20 Jun, 2026",
       resumen: "Extensiones de VS Code, configuraciones de terminal y atajos de teclado que me ahorran horas de trabajo a la semana.",
       contenido: "Mi stack actual de VS Code incluye: Prettier, ESLint, GitLens y el tema 'Dracula'. Además, cambié mi terminal por defecto a ZSH con Oh-My-Zsh y el tema 'Agnoster'. Esto no solo hace que mi pantalla se vea genial (como de hacker), sino que los autocompletados me ahorran muchísimo tiempo a la hora de navegar entre carpetas.",
       tags: ["Productividad", "Herramientas"],
@@ -101,7 +101,7 @@ const Blog = () => {
     {
       id: 5,
       titulo: "Mi primer proyecto en React",
-      fecha: "01 May, 2026",
+      fecha: "20 Jun, 2026",
       resumen: "Aquí puedes escribir el resumen de tu nuevo artículo. Modifica este texto como quieras para contar tu experiencia.",
       contenido: "Para mi portafolio decidí usar React con TailwindCSS. Al principio entender el estado (useState) y los efectos (useEffect) fue un reto, pero una vez que haces clic, todo tiene sentido. Construir interfaces basadas en componentes hace que el código sea súper reutilizable.",
       tags: ["React", "Frontend", "Aprendizaje"],
