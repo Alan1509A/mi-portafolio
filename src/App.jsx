@@ -437,9 +437,9 @@ const Recursos = () => {
     {
       titulo: "Mis Apuntes y Documentos",
       links: [
-        { nombre: "Resumen POO (PDF)", url: "https://ejemplo.com/tu-pdf-de-poo.pdf", desc: "Mis apuntes para pasar Programación Orientada a Objetos." },
-        { nombre: "Carpeta Drive - Álgebra Lineal", url: "https://drive.google.com/...", desc: "Ejercicios resueltos y guías de estudio." },
-        { nombre: "Plantilla para Reportes (Word)", url: "#", desc: "Formato APA que siempre uso para entregas." }
+        { nombre: "Resumen POO (PDF)", url: "https://www.etsisi.upm.es/sites/default/files/curso_2013_14/MASTER/MIW.JEE.POOJ.pdf", desc: "Una guia para pasar Programación Orientada a Objetos jajajaja." },
+        { nombre: "Libro sobre Álgebra Lineal", url: "https://www.cs.buap.mx/~sandoval/ALAverano2013/AlgebraLineal.pdf", desc: "Ejercicios resueltos y guías de estudio." },
+        { nombre: "Mis proyectos en GitHub", url: "https://github.com/Alan1509A/mi-portafolio.git", desc: "Este repositorio contiene una guia visual sobre como cree este sitio web." }
       ]
     },
     {
