@@ -66,7 +66,7 @@ const Blog = () => {
       id: 1,
       titulo: "Entendiendo Estructuras de Datos: Árboles vs Grafos",
       fecha: "19 Jun, 2026",
-      resumen: "Una guía sobre que son los Grafos y los Arboles dentro de la Informatica",
+      resumen: "Un vistazo a dos de las estructuras de datos más fundamentales en informática, sus diferencias clave y cuándo usar cada una.",
       contenido: "Dentro del mundo de la Informatica hay demasiados conceptos y metodos que seguir y sobre todo, entender, el dia de hoy hablaremos sobre grafos y arboles. En primer lugar tenemos a los grafos, que se definen como un conjunto de nodos (vertices) y conexiones (aristas), Dentro de estos tenemos tres tipos de grafos basicos: Grafo dirigido, grafo no dirigido y grafo ponderado. Por otro lado, tenemos a los arboles, que son un tipo especial de grafo que no tiene ciclos y tiene una estructura jerarquica, es decir, cada nodo tiene un unico padre excepto el nodo raiz que no tiene padre. Dentro de los arboles tenemos varios tipos, como el arbol binario, arbol AVL y arbol B. Ambos conceptos son fundamentales en la Informatica y se utilizan en una gran variedad de aplicaciones, desde bases de datos hasta inteligencia artificial.",
       tags: ["Algoritmos", "Estructuras", "Ordenamientos"],
       readTime: "10 min lectura"
