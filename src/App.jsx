@@ -455,7 +455,8 @@ const Recursos = () => {
       links: [
         { nombre: "GitHub Student Developer Pack", url: "https://education.github.com/pack", desc: "Herramientas gratuitas para estudiantes." },
         { nombre: "Vercel", url: "https://vercel.com/", desc: "Para alojar tus proyectos gratis." },
-        { nombre: "Figma", url: "https://figma.com/", desc: "Diseño de interfaces." }
+        { nombre: "Figma", url: "https://figma.com/", desc: "Diseño de interfaces." },
+        { nombre: "Mi App sobre Modelos y Herramientas Matematicas, desarrollada en Python", url: "https://alan-simulador-matematico.streamlit.app/", desc: "Una app que simula el comportamiento de diferentes modelos matematicos, como el modelo de crecimiento poblacional, el modelo de depredador-presa y el modelo de difusión de enfermedades. Es una herramienta interactiva para entender conceptos matemáticos complejos a través de la visualización y la simulación." }   
       ]
     }
   ];   
