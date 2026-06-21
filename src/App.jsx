@@ -82,11 +82,11 @@ const Blog = () => {
     },
     {
       id: 3,
-      titulo: "Mi experiencia en el primer Hackathon",
-      fecha: "15 Sep, 2023",
-      resumen: "Te cuento cómo sobrevivimos 48 horas programando sin parar, qué tecnologías usamos y qué aprendí de los errores que cometimos.",
-      contenido: "Llegamos el viernes a las 6 PM sin saber a lo que nos enfrentábamos. Nuestro equipo decidió usar React y Firebase para crear una app de impacto social. Fueron 48 horas intensas llenas de café, bugs a las 3 AM y mucha piza. El mayor aprendizaje: planifica la arquitectura antes de escribir la primera línea de código.",
-      tags: ["Experiencia", "Hackathon"],
+      titulo: "Que son los algoritmos de ordenamiento y cuales son los mas comunes?",
+      fecha: "20 Jun, 2026",
+      resumen: "Los algoritmos de ordenamiento son fundamentales en informática para organizar datos. En este artículo, exploramos los más comunes y sus características.",
+      contenido: "Los algoritmos de ordenamiento son un conjunto de instrucciones que se utilizan para organizar datos en un orden especifico, ya sea ascendente o descendente. Algunos de los algoritmos de ordenamiento mas comunes son: Bubble Sort, Selection Sort, Insertion Sort, Merge Sort y Quick Sort. Cada uno de estos algoritmos tiene sus propias ventajas y desventajas en terminos de complejidad temporal y espacial, y la eleccion del algoritmo adecuado depende del tamaño y la naturaleza de los datos a ordenar.",
+      tags: ["Algoritmos", "Ordenamientos"],
       readTime: "8 min lectura"
     },
     {
@@ -100,11 +100,11 @@ const Blog = () => {
     },
     {
       id: 5,
-      titulo: "Mi primer proyecto en React",
+      titulo: "Que es WSL en Windows y como configurarlo",
       fecha: "20 Jun, 2026",
-      resumen: "Aquí puedes escribir el resumen de tu nuevo artículo. Modifica este texto como quieras para contar tu experiencia.",
-      contenido: "Para mi portafolio decidí usar React con TailwindCSS. Al principio entender el estado (useState) y los efectos (useEffect) fue un reto, pero una vez que haces clic, todo tiene sentido. Construir interfaces basadas en componentes hace que el código sea súper reutilizable.",
-      tags: ["React", "Frontend", "Aprendizaje"],
+      resumen: "WSL (Windows Subsystem for Linux) es una herramienta que permite ejecutar un entorno Linux directamente en Windows. En este artículo, te guío paso a paso para configurarlo y sacarle el máximo provecho.",
+      contenido: "WSL es un subsistema que permite a los usuarios de Windows ejecutar un entorno Linux sin necesidad de una máquina virtual. Para configurarlo, primero debes habilitar la característica de WSL en Windows, luego instalar una distribución de Linux desde la Microsoft Store (como Ubuntu) y finalmente configurar tu terminal para usar WSL. Esto te permitirá tener acceso a herramientas y comandos de Linux directamente desde tu entorno de desarrollo en Windows, lo que es especialmente útil para desarrolladores web y programadores que trabajan con tecnologías basadas en Linux.",
+      tags: ["WSL", "Linux", "Windows 11"],
       readTime: "6 min lectura"
     }
   ];
