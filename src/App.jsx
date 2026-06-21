@@ -448,6 +448,7 @@ const Recursos = () => {
         { nombre: "Aprende React de forma profesional", url: "https://react.dev/", desc: "React te permite crear interfaces de usuario a partir de piezas individuales llamadas componentes. Crea tus propios componentes de React como , , y . Luego, combínalos para crear pantallas, páginas y aplicaciones completas" },
         { nombre: "Cppreference", url: "https://cppreference.com/", desc: "Documentación oficial de C++." },
         { nombre: "Documentación de Python", url: "https://docs.python.org/3/", desc: "La documentación oficial de Python." }
+        { nombre: "Curso de Linux desde cero (PDF)", url: "/Curso de Linux desde cero.pdf", desc: "Un curso completo para aprender Linux desde lo más básico." }
       ]
     },
     {
