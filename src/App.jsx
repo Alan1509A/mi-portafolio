@@ -504,7 +504,7 @@ const Contacto = () => {
         {/* 👇 Formulario actualizado para usar FORMSPREE */}
         <form 
           action="https://formspree.io/f/xkolwjpj" 
-          method="POST" 
+          method="POST"  
           className="space-y-4"   
         >
           <div className="grid grid-cols-2 gap-4">
