@@ -116,26 +116,26 @@ const Blog = () => {
       titulo: "El impacto de la Inteligencia Artificial en las elecciones",
       fecha: "20 Jun, 2026",
       resumen: "Cómo los algoritmos y las redes sociales están moldeando la opinión pública y los retos regulatorios que enfrentamos.",
-      contenido: "La tecnología siempre ha influido en la política, pero la IA generativa y los algoritmos de recomendación han acelerado este proceso. En este artículo analizo cómo se pueden crear marcos regulatorios que protejan la democracia sin frenar la innovación tecnológica...",
+      contenido: "En la era digital, la Inteligencia Artificial (IA) se ha convertido en una herramienta poderosa para influir en la opinión pública. Desde la segmentación de anuncios políticos hasta la creación de deepfakes, la IA está transformando la forma en que los ciudadanos reciben información y toman decisiones electorales. Sin embargo, esta revolución tecnológica también plantea serias preocupaciones sobre la manipulación de datos, la privacidad y la necesidad de una regulación efectiva para proteger la integridad de los procesos democráticos.",
       tags: ["Política", "IA", "Sociedad"],
       readTime: "7 min lectura"
     },
     {
       id: 102,
       titulo: "Privacidad de datos: Un derecho humano en la era digital",
-      fecha: "05 Mar, 2026",
+      fecha: "20 Jun, 2026",
       resumen: "Una reflexión sobre las leyes de protección de datos y por qué los ciudadanos deben exigir mayor transparencia a las grandes tecnológicas.",
-      contenido: "Los datos son el nuevo petróleo, pero ¿quién es el dueño real de tu información? Exploraremos las diferencias entre el RGPD en Europa y las legislaciones locales, y cómo la política pública debe adaptarse a la velocidad del internet...",
+      contenido: "La privacidad de datos se ha convertido en un tema crucial en la era digital. Con la cantidad de información personal que compartimos en línea, es fundamental que existan leyes y regulaciones que protejan nuestros datos. Sin embargo, muchas de las grandes empresas tecnológicas han sido criticadas por su falta de transparencia y por no hacer lo suficiente para proteger la privacidad de sus usuarios. Es hora de que los ciudadanos exijan mayor responsabilidad y que los gobiernos implementen políticas más estrictas para garantizar que la privacidad de datos sea respetada como un derecho humano fundamental.",
       tags: ["Privacidad", "Derechos", "Leyes"],
       readTime: "6 min lectura"
     },
     {
       id: 103,
       titulo: "El entorno digital en Mexico",
-      fecha: "01 de Mayo, 2026",
+      fecha: "20 , 2026",
       resumen: "Una mirada a cómo México está adoptando la tecnología y los desafíos que enfrenta en términos de infraestructura y educación digital.",
-      contenido: "México ha dado pasos importantes en la digitalización, pero aún enfrenta retos significativos en términos de acceso a internet y educación tecnológica. En este artículo analizo las políticas públicas implementadas y propongo soluciones para cerrar la brecha digital...",
-      tags: ["México", "Tecnología", "Desarrollo"],
+      contenido: "El entorno digital en México ha experimentado un crecimiento significativo en los últimos años, con un aumento en la adopción de tecnologías y una mayor conectividad. Sin embargo, el país aún enfrenta desafíos importantes en términos de infraestructura digital, acceso a internet en zonas rurales y educación tecnológica. Para que México pueda aprovechar plenamente las oportunidades que ofrece la era digital, es crucial que se implementen políticas que fomenten la inversión en infraestructura, promuevan la alfabetización digital y garanticen que todos los ciudadanos tengan acceso a las herramientas tecnológicas necesarias para prosperar en el siglo XXI.",
+      tags: ["México", "Tecnología", "Desarrollo"],   
       readTime: "5 min lectura"
     },
   ];
