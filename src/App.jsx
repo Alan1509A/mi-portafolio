@@ -114,7 +114,7 @@ const Blog = () => {
     {
       id: 101, // Usamos IDs diferentes para no confundirlos con los de Tech
       titulo: "El impacto de la Inteligencia Artificial en las elecciones",
-      fecha: "20 Abr, 2026",
+      fecha: "20 Jun, 2026",
       resumen: "Cómo los algoritmos y las redes sociales están moldeando la opinión pública y los retos regulatorios que enfrentamos.",
       contenido: "La tecnología siempre ha influido en la política, pero la IA generativa y los algoritmos de recomendación han acelerado este proceso. En este artículo analizo cómo se pueden crear marcos regulatorios que protejan la democracia sin frenar la innovación tecnológica...",
       tags: ["Política", "IA", "Sociedad"],
