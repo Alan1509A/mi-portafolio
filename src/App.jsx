@@ -1,3 +1,4 @@
+import TerminalInteractiva from './TerminalInteractiva';
 import React, { useState, useEffect } from 'react';
 import { 
   Terminal, 
@@ -51,6 +52,9 @@ const Inicio = ({ setSeccionActiva }) => (
         Leer mi Blog
       </button>
     </div>
+    <div className="w-full mt-12 w-full max-w-3xl animate-fade-in">
+        <TerminalInteractiva setCategoriaActiva={setSeccionActiva} /> 
+      </div>
   </div>
 );
 
