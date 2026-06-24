@@ -1,3 +1,4 @@
+import SobreMi from './SobreMi';   
 import TerminalInteractiva from './TerminalInteractiva';
 import React, { useState, useEffect } from 'react';
 import { 
@@ -5,6 +6,7 @@ import {
   BookOpen, 
   Coffee, 
   Mail, 
+  User, 
   Code, 
   Play, 
   Pause, 
@@ -553,6 +555,7 @@ export default function App() {
 
   const navItems = [
     { id: 'inicio', nombre: 'Inicio', icono: Terminal },
+    { id: 'sobre-mi', nombre: 'Sobre Mí', icono: User },
     { id: 'blog', nombre: 'Blog', icono: BookOpen },
     { id: 'estudia', nombre: 'Estudia Conmigo', icono: Coffee },
     { id: 'recursos', nombre: 'Recursos', icono: Code },
@@ -621,6 +624,7 @@ export default function App() {
       {/* Contenedor Principal Dinámico */}
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {seccionActiva === 'inicio' && <Inicio setSeccionActiva={setSeccionActiva} />}
+        {seccionActiva === 'sobre-mi' && <SobreMi />}
         {seccionActiva === 'blog' && <Blog />}
         {seccionActiva === 'estudia' && <EstudiaConmigo />}
         {seccionActiva === 'recursos' && <Recursos />}
