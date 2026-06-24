@@ -485,6 +485,15 @@ const Recursos = () => {
         { nombre: "Mi App sobre Modelos y Herramientas Matematicas, desarrollada en Python", url: "https://alan-simulador-matematico.streamlit.app/", desc: "Una app que simula el comportamiento de diferentes modelos matematicos, como el modelo de crecimiento poblacional, el modelo de depredador-presa y el modelo de difusión de enfermedades. Es una herramienta interactiva para entender conceptos matemáticos complejos a través de la visualización y la simulación." },   
       ]    
     },
+    {
+      titulo: "Cursos Tech", 
+      links: [
+        { nombre: "Curso de Linux desde cero (YouTube)", url: "https://youtu.be/jVQKk8IB9pA?si=wyJEjBksTy0P8UM_", desc: "Un curso completo para aprender Linux desde lo más básico." },
+        { nombre: "Fundamentos de Ciberseguridad (Santander Open Academy)", url: "https://app.santanderopenacademy.com/es/course/cybersecurity-fundamentals", desc: "Curso gratuito de ciberseguridad." },
+        { nombre: "Domina la IA con Gemini (Santander Open Academy)", url: "https://app.santanderopenacademy.com/es/course/master-ai-with-gemini", desc: "Curso gratuito sobre Inteligencia Artificial." },
+        { nombre: "Fundamentos de Python (Cisco Networking Academy)", url: "https://www.netacad.com/courses/python-essentials-1?courseLang=en-US", desc: "Curso gratuito de Python." },
+      ]
+    },
   ];   
 
   return (
