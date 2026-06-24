@@ -431,6 +431,25 @@ const EstudiaConmigo = () => {
           </div>
         </div>
       </div>
+      <div className="md:col-span-2 mt-4 bg-gradient-to-r from-blue-900/20 to-teal-900/20 border border-blue-500/30 rounded-xl p-8 text-center shadow-2xl">
+        <h3 className="text-2xl font-bold text-white mb-3">
+          ¿Atascado en un proyecto o preparándote para un examen?
+        </h3>
+        <p className="text-gray-300 mb-6 max-w-2xl mx-auto">
+          Reserva una sesión de asesoría personalizada 1 a 1. Ya sea para depurar código complejo, entender la programación orientada a objetos, o revisar modelos matemáticos avanzados, trabajaremos juntos para resolverlo.
+        </p>
+        
+        <button 
+          onClick={() => window.open('https://calendly.com/alaneduardo5788/30min', '_blank')}
+          className="flex items-center justify-center gap-2 mx-auto bg-blue-600 hover:bg-blue-500 text-white font-bold py-3 px-8 rounded-lg shadow-[0_0_15px_rgba(37,99,235,0.5)] hover:shadow-[0_0_25px_rgba(59,130,246,0.6)] transition-all"
+        >
+          Agendar Asesoría Privada
+        </button>
+        
+        <p className="text-sm text-gray-400 mt-4">
+          * Horarios flexibles. Pago seguro al momento de reservar.
+        </p>
+      </div> 
     </div>
   );
 };
