@@ -20,7 +20,7 @@ const TerminalInteractiva = ({ setSeccionActiva }) => {
       if (command === 'help') {
         response = 'Comandos disponibles: whoami, ls, blog, clear, secret';
       } else if (command === 'whoami') {
-        response = 'Alan Eduardo: Estudiante de Ciencias de la Informática en la UPIICSA y Titular de Tecnología e Innovación Digital.';
+        response = 'Alan Eduardo: Estudiante de Ciencias de la Informática en la UPIICSA y Titular de Tecnología e Innovación Digital en Politica Juvenil Internacional - Nicolas Romero.';
       } else if (command === 'ls') {
         response = 'proyectos/  recursos/  simulador-matematico/  notas_filosofia.md';
       } else if (command === 'blog') {
