@@ -482,7 +482,8 @@ const Recursos = () => {
         { nombre: "GitHub Student Developer Pack", url: "https://education.github.com/pack", desc: "Herramientas gratuitas para estudiantes." },
         { nombre: "Vercel", url: "https://vercel.com/", desc: "Para alojar tus proyectos gratis." },
         { nombre: "Figma", url: "https://figma.com/", desc: "Diseño de interfaces." },
-        { nombre: "Mi App sobre Modelos y Herramientas Matematicas, desarrollada en Python", url: "https://alan-simulador-matematico.streamlit.app/", desc: "Una app que simula el comportamiento de diferentes modelos matematicos, como el modelo de crecimiento poblacional, el modelo de depredador-presa y el modelo de difusión de enfermedades. Es una herramienta interactiva para entender conceptos matemáticos complejos a través de la visualización y la simulación." },   
+        { nombre: "Mi App sobre Modelos y Herramientas Matematicas, desarrollada en Python", url: "https://alan-simulador-matematico.streamlit.app/", desc: "Una app que simula el comportamiento de diferentes modelos matematicos, como el modelo de crecimiento poblacional, el modelo de depredador-presa y el modelo de difusión de enfermedades. Es una herramienta interactiva para entender conceptos matemáticos complejos a través de la visualización y la simulación." },  
+        { nombre: "Mi Modelo IA de Deportes y Asesoria Legal", url: "https://alan-modeloia.vercel.app/", desc: "Un modelo de Inteligencia Artificial que puede responder preguntas sobre deportes y asesoría legal. Entrenado con datos de Wikipedia y otras fuentes confiables, este modelo puede proporcionar información precisa y útil en tiempo real." }, 
       ]    
     },
     {
