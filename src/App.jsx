@@ -40,20 +40,24 @@ const Inicio = ({ setSeccionActiva }) => (
     <p className="text-xl text-gray-400 mb-8 max-w-2xl">
       Estudiante de Ciencias de la Informática. Apasionado por el código, los algoritmos y por compartir conocimiento con la comunidad estudiantil.
     </p>
-    <div className="flex flex-wrap justify-center gap-4">
+    
+       <div className="flex flex-col sm:flex-row justify-center gap-4">
+      {/* Botón Principal (Generador de Clientes) */}
+      <button 
+        onClick={() => setSeccionActiva('servicios')}
+        className="px-6 py-3 bg-blue-600 hover:bg-blue-500 text-white rounded-lg font-medium transition flex items-center justify-center gap-2 shadow-[0_0_15px_rgba(37,99,235,0.4)]"
+      >
+        <Briefcase size={20} />
+        Ver Servicios
+      </button>
+
+      {/* Botón Secundario (Autoridad y Comunidad) */}
       <button 
         onClick={() => setSeccionActiva('estudia')}
-        className="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-medium transition flex items-center gap-2 shadow-lg shadow-blue-500/30"
+        className="px-6 py-3 bg-gray-800 hover:bg-gray-700 text-white border border-gray-700 rounded-lg font-medium transition flex items-center justify-center gap-2"
       >
         <Coffee size={20} />
         Estudia Conmigo
-      </button>
-      <button 
-        onClick={() => setSeccionActiva('blog')}
-        className="px-6 py-3 bg-gray-800 hover:bg-gray-700 text-white border border-gray-700 rounded-lg font-medium transition flex items-center gap-2"
-      >
-        <BookOpen size={20} />
-        Leer mi Blog
       </button>
     </div>
     <div className="w-full mt-12 w-full max-w-3xl animate-fade-in">
