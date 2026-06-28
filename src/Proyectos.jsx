@@ -12,8 +12,8 @@ const Proyectos = () => {
       icono: <Database size={40} className="text-emerald-400" />,
       colorGradiante: "from-emerald-900/40 to-emerald-600/10",
       colorBorde: "border-emerald-500/30",
-      linkGithub: "#", // Aquí pondrás tu link de GitHub
-      linkDemo: "#"    // Aquí pondrás el link de Vercel si está publicado
+      linkGithub: "https://github.com/Alan1509A/App-Libreria-.git", // Aquí pondrás tu link de GitHub
+      linkDemo: "https://app-libreria-alan-eduardo101509.vercel.app/"    // Aquí pondrás el link de Vercel si está publicado
     },
     {
       id: 2,
@@ -34,9 +34,20 @@ const Proyectos = () => {
       icono: <BookOpen size={40} className="text-purple-400" />,
       colorGradiante: "from-purple-900/40 to-purple-600/10",
       colorBorde: "border-purple-500/30",
-      linkGithub: "#",
+      linkGithub: null, 
       linkDemo: "https://entrecodigosydiscursos.blogspot.com/"
-    }
+    },
+    {
+      id: 4,
+      titulo: "Modelo IA sobre deportes y asesoria legal",
+      descripcion: "Modelo de Inteligencia Artificial entrenado para analizar y predecir resultados deportivos, así como ofrecer asesoría legal básica. Combina técnicas de Machine Learning con procesamiento de lenguaje natural.",
+      tecnologias: ["Python", "Machine Learning", "NLP"],
+      icono: <Code2 size={40} className="text-yellow-400" />,
+      colorGradiante: "from-yellow-900/40 to-yellow-600/10",
+      colorBorde: "border-yellow-500/30",
+      linkGithub: "https://github.com/Alan1509A/Modelo-IA.git", 
+      linkDemo: "https://alan-modeloia.vercel.app/"
+    }, 
   ];
 
   return (
@@ -78,17 +89,24 @@ const Proyectos = () => {
                 ))}
               </div>
 
+            
               {/* Botones de acción */}
               <div className="flex gap-3 mt-auto">
-                <a 
-                  href={proyecto.linkGithub} 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 px-4 py-2 bg-gray-800 hover:bg-gray-700 text-white text-sm font-medium rounded-lg transition border border-gray-700 w-full justify-center"
-                >
-                  <Code size={16} />
-                  Código
-                </a>
+                
+                {/* Magia de React: Este botón solo se dibuja si linkGithub NO es null */}
+                {proyecto.linkGithub && (
+                  <a 
+                    href={proyecto.linkGithub} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 px-4 py-2 bg-gray-800 hover:bg-gray-700 text-white text-sm font-medium rounded-lg transition border border-gray-700 w-full justify-center"
+                  >
+                    <Code size={16} />
+                    Código
+                  </a>
+                )}
+                
+                {/* Este botón de Demo/Visitar siempre aparece */}
                 <a 
                   href={proyecto.linkDemo} 
                   target="_blank" 
@@ -96,7 +114,7 @@ const Proyectos = () => {
                   className="flex items-center gap-2 px-4 py-2 bg-blue-600 hover:bg-blue-500 text-white text-sm font-medium rounded-lg transition w-full justify-center shadow-lg shadow-blue-500/20"
                 >
                   <ExternalLink size={16} />
-                  Demo
+                  {proyecto.linkGithub === null ? "Leer Blog" : "Demo"}
                 </a>
               </div>
             </div>
