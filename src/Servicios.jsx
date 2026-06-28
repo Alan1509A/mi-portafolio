@@ -87,7 +87,7 @@ const Servicios = () => {
           {/* Botón de WhatsApp */}
           <button 
             // Cambia el 525500000000 por tu número real (52 + tus 10 dígitos)
-            onClick={() => window.open('https://wa.me/5552485628?text=Hola%20Alan,%20me%20interesa%20una%20cotización%20de%20tos%20servicios.', '_blank')}
+            onClick={() => window.open('https://wa.me/5552485628?text=Hola%20Alan,%20me%20interesa%20una%20cotización%20de%20tus%20servicios.', '_blank')}
             className="flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-3 px-8 rounded-lg shadow-lg hover:shadow-emerald-500/25 transition-all w-full sm:w-auto"
           >
             <MessageCircle size={20} />
