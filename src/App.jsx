@@ -668,17 +668,21 @@ export default function App() {
         {seccionActiva === 'contacto' && <Contacto />}
       </main>
 
-      {/* Footer */}
-      <footer className="border-t border-gray-900 bg-gray-950 mt-auto">
-        <div className="max-w-7xl mx-auto py-6 px-4 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-gray-500 text-sm mb-4 md:mb-0">
-            © {new Date().getFullYear()} Creado con React y Tailwind.
-          </p>
-          <div className="flex space-x-6">
-            <span className="text-gray-500 text-sm flex items-center gap-1">
-              <Terminal size={14}/> compila sin errores
-            </span>
+      {/* Footer / Pie de página */}
+      <footer className="border-t border-gray-800 mt-20 py-8">
+        <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-gray-500 font-mono">
+          
+          {/* Firma izquierda */}
+          <div>
+            © {new Date().getFullYear()} Desarrollado por <span className="text-blue-400 font-bold hover:text-blue-300 transition-colors">Alan Eduardo Martinez</span>.
           </div>
+
+          {/* Toque personal derecha */}
+          <div className="flex items-center gap-2 group cursor-default">
+            <span className="text-emerald-500 animate-pulse group-hover:text-emerald-400">{'>_'}</span>
+            <span className="group-hover:text-gray-300 transition-colors">root@alan:~# computer_solutions_ae</span>
+          </div>
+
         </div>
       </footer>
 
