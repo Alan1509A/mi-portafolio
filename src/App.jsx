@@ -538,48 +538,69 @@ const Recursos = () => {
 const Contacto = () => {
   return (
     <div className="max-w-2xl mx-auto animate-fade-in">
+      
+      {/* Título */}
       <div className="flex items-center gap-3 mb-8 border-b border-gray-800 pb-4">
         <Mail className="text-blue-400" size={32} />
         <h2 className="text-3xl font-bold">PingMe_</h2>
       </div>
-      
+
+      {/* Tarjeta principal */}
       <div className="bg-gray-800 p-8 rounded-2xl border border-gray-700 shadow-xl">
-        <p className="text-gray-400 mb-6">¿Quieres colaborar en un proyecto, tienes dudas sobre la carrera o simplemente quieres saludar? ¡Escríbeme!</p>
-        
-        {/* 👇 Formulario actualizado para usar FORMSPREE */}
+        <p className="text-gray-400 mb-6">
+          ¿Quieres colaborar en un proyecto, tienes dudas sobre la carrera o simplemente quieres saludar? ¡Escríbeme!
+        </p>
+
+        {/* Formulario */}
         <form 
           action="https://formspree.io/f/xkolwjpj" 
-          method="POST"  
-          className="space-y-4"   
+          method="POST" 
+          className="space-y-4"
         >
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
               <label className="block text-sm font-medium text-gray-400 mb-1">Tu Nombre</label>
-              <input type="text" name="nombre" required className="w-full bg-gray-900 border border-gray-700 rounded-lg px-4 py-2 text-gray-200 focus:outline-none focus:border-blue-500 transition" placeholder="Ej. Ada Lovelace" />
+              <input type="text" name="nombre" required className="w-full bg-gray-900 border border-gray-700 rounded-lg px-4 py-2 text-white focus:outline-none focus:border-blue-500 transition-colors" placeholder="Ej. Ada Lovelace" />
             </div>
             <div>
               <label className="block text-sm font-medium text-gray-400 mb-1">Tu Email</label>
-              <input type="email" name="email" required className="w-full bg-gray-900 border border-gray-700 rounded-lg px-4 py-2 text-gray-200 focus:outline-none focus:border-blue-500 transition" placeholder="ada@ejemplo.com" />
+              <input type="email" name="email" required className="w-full bg-gray-900 border border-gray-700 rounded-lg px-4 py-2 text-white focus:outline-none focus:border-blue-500 transition-colors" placeholder="ada@ejemplo.com" />
             </div>
           </div>
+          
           <div>
             <label className="block text-sm font-medium text-gray-400 mb-1">Mensaje</label>
-            <textarea name="mensaje" required rows="4" className="w-full bg-gray-900 border border-gray-700 rounded-lg px-4 py-2 text-gray-200 focus:outline-none focus:border-blue-500 transition resize-none" placeholder="Escribe tu mensaje aquí..."></textarea>
+            <textarea name="mensaje" required rows="4" className="w-full bg-gray-900 border border-gray-700 rounded-lg px-4 py-2 text-white focus:outline-none focus:border-blue-500 transition-colors" placeholder="Escribe tu mensaje aquí..."></textarea>
           </div>
-          <button type="submit" className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 rounded-lg transition flex justify-center items-center gap-2">
+
+          <button type="submit" className="w-full flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-500 text-white font-medium py-3 rounded-lg transition-colors">
             <Mail size={18} />
             Enviar Mensaje
           </button>
         </form>
 
+        {/* Redes Sociales */}
         <div className="mt-8 pt-6 border-t border-gray-700 flex justify-center gap-6">
-          <a href="#" className="text-gray-400 hover:text-white transition">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.02c3.14-.35 6.5-1.4 6.5-7a4.6 4.6 0 0 0-1.39-3.23 4.2 4.2 0 0 0-.1-3.2s-1.1-.35-3.5 1.25a11.39 11.39 0 0 0-6 0c-2.4-1.6-3.5-1.25-3.5-1.25a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 2 8.98c0 5.6 3.36 6.65 6.5 7a4.8 4.8 0 0 0-1 3.02v4"></path></svg>
+          
+          {/* GitHub */}
+          <a href="https://github.com/Alan1509A" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/>
+              <path d="M9 18c-4.51 2-5-2-7-2"/>
+            </svg>
           </a>
-          <a href="#" className="text-gray-400 hover:text-blue-500 transition">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+
+          {/* LinkedIn */}
+          <a href="https://www.linkedin.com/in/alan-eduardo-martinez-p%C3%A9rez-1514541a6?utm_source=share_via&utm_content=profile&utm_medium=member_android&fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQPOTM2NjE5NzQzMzkyNDU5AAGn9Xw1iXJeHCTlD9zUni0pK2Ee7e5mJV70L8BU6It0-q_fR1H__aqCmcgxWdA_aem_gh2GrXZQ1IsZ3MAgY5Y_4A" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-blue-500 transition">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+              <rect width="4" height="12" x="2" y="9"/>
+              <circle cx="4" cy="4" r="2"/>
+            </svg>
           </a>
+
         </div>
+
       </div>
     </div>
   );
