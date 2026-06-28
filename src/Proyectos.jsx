@@ -1,26 +1,43 @@
 import React from 'react';
-import { ExternalLink, Code, Code2, Database, Calculator, BookOpen } from 'lucide-react';
+// Importamos los iconos que usaremos en los botones y menús
+import { ExternalLink, Code, Code2, BookOpen, Database, Calculator } from 'lucide-react';
+
+// --- NUEVA SECCIÓN: IMPORTAMOS TUS CAPTURAS ---
+// Asegúrate de guardar tus imágenes con estos nombres en la carpeta src
+import inventarioPreview from './inventario_preview.png';
+import matematicaPreview from './matematica_preview.png';
+import modeloiapreview from './modeloiapreview.png'; 
 
 const Proyectos = () => {
-  // Lista de proyectos preconfigurada
+  // Lista de proyectos ACTUALIZADA para incluir imágenes
   const portafolio = [
     {
       id: 1,
       titulo: "Sistema de Inventario Bibliotecario",
-      descripcion: "Aplicación robusta para la gestión completa de inventarios. Arquitectura diseñada bajo los principios de la Programación Orientada a Objetos (POO) para garantizar escalabilidad y fácil mantenimiento.",
+      descripcion: "Aplicación robusta para la gestión completa de inventarios...",
       tecnologias: ["React", "POO", "Tailwind CSS"],
-      icono: <Database size={40} className="text-emerald-400" />,
+      
+      // --- CAMBIO AQUÍ: USAMOS IMAGEN EN LUGAR DE ICONO GRANDE ---
+      imagen: inventarioPreview, 
+      
+      // Mantenemos los iconos pequeños para los botones
+      iconoBoton: <Database size={16} />,
       colorGradiante: "from-emerald-900/40 to-emerald-600/10",
       colorBorde: "border-emerald-500/30",
-      linkGithub: "https://github.com/Alan1509A/App-Libreria-.git", // Aquí pondrás tu link de GitHub
-      linkDemo: "https://app-libreria-alan-eduardo101509.vercel.app/"    // Aquí pondrás el link de Vercel si está publicado
+      linkGithub: "https://github.com/Alan1509A/App-Libreria-.git", // Reemplaza con tu link real
+      linkDemo: "https://app-libreria-alan-eduardo101509.vercel.app/"
     },
     {
       id: 2,
       titulo: "Suite Matemática Interactiva",
-      descripcion: "Herramienta analítica para resolver y visualizar cálculos complejos de álgebra y geometría. Diseñada para procesar datos matemáticos de forma rápida y con una interfaz amigable.",
+      descripcion: "Herramienta analítica para resolver y visualizar cálculos...",
       tecnologias: ["Python", "Streamlit", "Matemáticas Aplicadas"],
-      icono: <Calculator size={40} className="text-blue-400" />,
+      
+      // --- CAMBIO AQUÍ: USAMOS IMAGEN EN LUGAR DE ICONO GRANDE ---
+      imagen: matematicaPreview, 
+      
+      // Mantenemos los iconos pequeños para los botones
+      iconoBoton: <Calculator size={16} />,
       colorGradiante: "from-blue-900/40 to-blue-600/10",
       colorBorde: "border-blue-500/30",
       linkGithub: "https://github.com/Alan1509A/simulador-matematico-.git",
@@ -29,20 +46,25 @@ const Proyectos = () => {
     {
       id: 3,
       titulo: "Blog: Entre Códigos y Discursos",
-      descripcion: "Plataforma personal de artículos donde convergen la rigurosidad de las Ciencias de la Informática y el análisis del pensamiento crítico. Un espacio para documentar aprendizaje y reflexiones.",
-      tecnologias: ["Desarrollo Web", "Markdown", "Diseño UI"],
-      icono: <BookOpen size={40} className="text-purple-400" />,
+      descripcion: "Plataforma personal de artículos...",
+      tecnologias: ["Blogger", "Redacción", "Filosofía"],
+      
+      // --- CAMBIO AQUÍ: MANTENEMOS EL ICONO PARA EL BLOG (NO ES SOFTWARE) ---
+      imagen: null, 
+      iconoBlog: <BookOpen size={40} className="text-purple-400" />,
+      
       colorGradiante: "from-purple-900/40 to-purple-600/10",
       colorBorde: "border-purple-500/30",
-      linkGithub: null, 
+      linkGithub: null, // Mantenemos la lógica de no mostrar GitHub
       linkDemo: "https://entrecodigosydiscursos.blogspot.com/"
-    },
+    }, 
     {
       id: 4,
-      titulo: "Modelo IA sobre deportes y asesoria legal",
-      descripcion: "Modelo de Inteligencia Artificial entrenado para analizar y predecir resultados deportivos, así como ofrecer asesoría legal básica. Combina técnicas de Machine Learning con procesamiento de lenguaje natural.",
-      tecnologias: ["Python", "Machine Learning", "NLP"],
-      icono: <Code2 size={40} className="text-yellow-400" />,
+      titulo: "Mi Modelo IA sobre deportes y aseosria legal", 
+      descripcion: "Modelo de IA para análisis de datos deportivos y asesoría legal...",
+      tecnologias: ["Python", "Machine Learning", "Data Analysis"],
+      imagen: modeloiapreview,
+      iconoBoton: <Code2 size={16} />,
       colorGradiante: "from-yellow-900/40 to-yellow-600/10",
       colorBorde: "border-yellow-500/30",
       linkGithub: "https://github.com/Alan1509A/Modelo-IA.git", 
@@ -67,17 +89,27 @@ const Proyectos = () => {
             key={proyecto.id} 
             className={`bg-gradient-to-b ${proyecto.colorGradiante} border ${proyecto.colorBorde} rounded-2xl overflow-hidden flex flex-col hover:-translate-y-2 transition-transform duration-300 shadow-xl`}
           >
-            {/* Cabecera visual del proyecto (Reemplaza la imagen por ahora con un gradiente y un ícono) */}
-            <div className="h-40 flex items-center justify-center bg-gray-900/50 border-b border-gray-800">
-               {proyecto.icono}
+            
+            {/* 1. CABECERA VISUAL (Imágenes o Íconos) */}
+            <div className="h-48 flex items-center justify-center bg-gray-900/50 border-b border-gray-800 overflow-hidden relative group">
+              {proyecto.imagen ? (
+                <img 
+                  src={proyecto.imagen} 
+                  alt={`Vista previa de ${proyecto.titulo}`}
+                  className="w-full h-full object-cover object-top opacity-80 group-hover:opacity-100 transition-opacity duration-300"
+                />
+              ) : (
+                /* Si no hay imagen, intenta usar cualquier icono que hayas definido */
+                proyecto.iconoBlog || proyecto.iconoGenuino || proyecto.iconoBoton
+              )}
             </div>
 
-            {/* Contenido de la tarjeta */}
+            {/* 2. CONTENIDO DE LA TARJETA (Textos) */}
             <div className="p-6 flex-1 flex flex-col">
               <h3 className="text-xl font-bold text-white mb-2">{proyecto.titulo}</h3>
               <p className="text-gray-400 text-sm mb-6 flex-1">{proyecto.descripcion}</p>
               
-              {/* Etiquetas de Tecnologías */}
+              {/* 3. ETIQUETAS DE TECNOLOGÍAS */}
               <div className="flex flex-wrap gap-2 mb-6">
                 {proyecto.tecnologias.map((tech, idx) => (
                   <span 
@@ -89,11 +121,10 @@ const Proyectos = () => {
                 ))}
               </div>
 
-            
-              {/* Botones de acción */}
+              {/* 4. BOTONES DE ACCIÓN (Con la lógica inteligente) */}
               <div className="flex gap-3 mt-auto">
                 
-                {/* Magia de React: Este botón solo se dibuja si linkGithub NO es null */}
+                {/* El botón de código SOLO aparece si linkGithub NO es null */}
                 {proyecto.linkGithub && (
                   <a 
                     href={proyecto.linkGithub} 
@@ -106,7 +137,7 @@ const Proyectos = () => {
                   </a>
                 )}
                 
-                {/* Este botón de Demo/Visitar siempre aparece */}
+                {/* El botón azul siempre aparece */}
                 <a 
                   href={proyecto.linkDemo} 
                   target="_blank" 
@@ -117,6 +148,7 @@ const Proyectos = () => {
                   {proyecto.linkGithub === null ? "Leer Blog" : "Demo"}
                 </a>
               </div>
+
             </div>
           </div>
         ))}
