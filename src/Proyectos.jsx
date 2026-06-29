@@ -60,7 +60,7 @@ const Proyectos = () => {
     }, 
     {
       id: 4,
-      titulo: "Mi Modelo IA sobre deportes y aseosria legal", 
+      titulo: "Mi Modelo IA sobre deportes y asesoria legal", 
       descripcion: "Modelo de IA para análisis de datos deportivos y asesoría legal...",
       tecnologias: ["Python", "Machine Learning", "Data Analysis"],
       imagen: modeloiapreview,
