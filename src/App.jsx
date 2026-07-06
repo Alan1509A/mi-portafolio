@@ -1,3 +1,4 @@
+import { Analytics } from '@vercel/analytics/react';
 import Proyectos from './Proyectos';
 import Servicios from './Servicios';
 import SobreMi from './SobreMi';   
@@ -728,6 +729,8 @@ export default function App() {
           scrollbar-width: none;
         }
       `}} />
+      {/* Vercel Analytics se coloca al final de tu aplicación */}
+      <Analytics /> 
     </div>
   );
 }
