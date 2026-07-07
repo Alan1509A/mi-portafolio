@@ -1,5 +1,6 @@
 import { Analytics } from '@vercel/analytics/react';
 import Proyectos from './Proyectos';
+import Certificados from './Certificados';
 import Servicios from './Servicios';
 import SobreMi from './SobreMi';   
 import TerminalInteractiva from './TerminalInteractiva';
@@ -13,6 +14,7 @@ import {
   Briefcase, 
   Code2, 
   Code, 
+  Award, 
   Play, 
   Pause, 
   RotateCcw,
@@ -615,6 +617,7 @@ export default function App() {
   const navItems = [
     { id: 'inicio', nombre: 'Inicio', icono: Terminal },
     { id: 'sobre-mi', nombre: 'Sobre Mí', icono: User },
+    { id: 'certificados', nombre: 'Certificados', icono: Award },
     { id: 'proyectos', nombre: 'Proyectos', icono: Code2 },
     { id: 'servicios', nombre: 'Servicios', icono: Briefcase },
     { id: 'blog', nombre: 'Blog', icono: BookOpen },
@@ -686,6 +689,7 @@ export default function App() {
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {seccionActiva === 'inicio' && <Inicio setSeccionActiva={setSeccionActiva} />}
         {seccionActiva === 'sobre-mi' && <SobreMi />}
+        {seccionActiva === 'certificados' && <Certificados />}
         {seccionActiva === 'proyectos' && <Proyectos />}
         {seccionActiva === 'servicios' && <Servicios />}
         {seccionActiva === 'blog' && <Blog />}   
