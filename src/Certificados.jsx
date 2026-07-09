@@ -15,7 +15,17 @@ const Certificados = () => {
       bordeHover: "hover:border-blue-500/50"
     },
     {
-      id: 2,
+      id: 2, 
+      titulo: "Inteligencia Artificial y Agentforce",
+      emisor: "Iberoamerican Technology Foundation - Salesforce",
+      fecha: "Julio 2026",
+      tecnologias: ["Inteligencia Artificial", "Agentforce", "Salesforce"],
+      urlCredencial: "https://campus.iberotech.org/pluginfile.php/1/tool_certificate/issues/1783578803/9228589100AM.pdf", 
+      iconoColor: "text-cyan-400",
+      bordeHover: "hover:border-cyan-500/50"
+    }, 
+    {
+      id: 3,
       titulo: "Computo Basico",
       emisor: "Fundacion Carlos Slim - Capacítate para el Empleo",
       fecha: "Mayo 2021",
@@ -25,7 +35,7 @@ const Certificados = () => {
       bordeHover: "hover:border-purple-500/50"
     },
     {
-      id: 3,
+      id: 4,
       titulo: "Tecnico en Informatica",
       emisor: "Fundacion Carlos Slim - Capacítate para el Empleo",
       fecha: "Mayo 2021",
@@ -35,7 +45,7 @@ const Certificados = () => {
       bordeHover: "hover:border-emerald-500/50"
     },
     {
-        id: 4,
+        id: 5,
         titulo: "Introduccion a la Ingenieria en Inteligencia Artifical", 
         emisor: "Iberoamerican Technology Foundation",
         fecha: "Abril 2026",
@@ -45,7 +55,7 @@ const Certificados = () => {
         bordeHover: "hover:border-amber-500/50"
     },
     {
-        id: 5,
+        id: 6,
         titulo: "Domina la IA con Gemini", 
         emisor: "Santander Open Academy",
         fecha: "Mayo 2026",
