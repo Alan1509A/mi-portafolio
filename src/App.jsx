@@ -148,7 +148,7 @@ const Blog = () => {
     },
     {
       id: 103,
-      titulo: "El entorno digital en Mexico",
+      titulo: "El entorno digital en Mexico actualmente",
       fecha: "20 , 2026",
       resumen: "Una mirada a cómo México está adoptando la tecnología y los desafíos que enfrenta en términos de infraestructura y educación digital.",
       contenido: "El entorno digital en México ha experimentado un crecimiento significativo en los últimos años, con un aumento en la adopción de tecnologías y una mayor conectividad. Sin embargo, el país aún enfrenta desafíos importantes en términos de infraestructura digital, acceso a internet en zonas rurales y educación tecnológica. Para que México pueda aprovechar plenamente las oportunidades que ofrece la era digital, es crucial que se implementen políticas que fomenten la inversión en infraestructura, promuevan la alfabetización digital y garanticen que todos los ciudadanos tengan acceso a las herramientas tecnológicas necesarias para prosperar en el siglo XXI.",
